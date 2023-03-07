@@ -20,7 +20,18 @@ shuffle=$(cmus-remote -C status | grep "shuffle" | cut -c 13-)
 repeat=$(cmus-remote -C status | grep "repeat_current" | cut -c 20-)
 
 if [[ $artist = *[!\ ]* ]]; then
+    if [[ $shuffle = true ]] || [[ $repeat = true ]]; then
+        player && echo -n " ("
+        if [[ $shuffle = true ]]; then
+            echo -n "S"
+        fi
+        if [[ $repeat = true ]]; then
+            echo -n "R"
+        fi
+        echo -n ")"
+    else
         player
+    fi
 else
         echo
 fi
