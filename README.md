@@ -2,7 +2,8 @@
 
 Basic cmus module for polybar
 
-/u/WozarZ's cmus script, but I cleaned up issues relating to capturing artist name and string dump when no track is running.
+[Ray](https://github.com/raytruong): /u/WozarZ's cmus script, but I cleaned up issues relating to capturing artist 
+name and string dump when no track is running.
 
 ```ini
 [module/cmus]
