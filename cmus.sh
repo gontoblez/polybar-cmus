@@ -20,16 +20,14 @@ minutes2=$(prepend_zero $(($duration / 60)))
     seconds2=$(prepend_zero $(($duration % 60)))
     shuffle=$(cmus-remote -C status | grep "shuffle" | cut -c 13-)
     repeat=$(cmus-remote -C status | grep "repeat_current" | cut -c 20-)
-    if [[ $shuffle = true ]] || [[ $repeat = true ]]; then
+
         if [[ $shuffle = true ]]; then
-            echo -n ""
+            echo -n "  "
         fi
-        if [[ $repeat = true ]]; then
-            echo -n ""
-        fi
-    else
         player
-    fi
+        if [[ $repeat = true ]]; then
+            echo -n " "
+        fi
 else
         echo
 fi
