@@ -21,6 +21,9 @@ minutes2=$(prepend_zero $(($duration / 60)))
     shuffle=$(cmus-remote -C status | grep "shuffle" | cut -c 13-)
     repeat=$(cmus-remote -C status | grep "repeat_current" | cut -c 20-)
 
+    ## see whether shuffle is enabled, if so, print that it is, then
+    ## print the player, and then if repeat is enabled, then print that it is :)
+
         if [[ $shuffle = true ]]; then
             echo -n "  "
         fi
